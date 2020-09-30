@@ -40,11 +40,13 @@ def play():
     print("Remember whoever wins 3 rounds first will win the game!")
     print("")
 
+    # Loop to know if we are still playing and keep asking the user for an input until someone wins 3 rounds
     while stillPlaying:
         userChoice = playersChoice()
         compuChoice = computerChoice()
         determineWinner(userChoice, compuChoice) 
 
+    # Once either the user or the computer has won 3 rounds we determine the winner
     if winner == "User":
         print("You won the game! Nice work!")
     else:
@@ -62,7 +64,7 @@ def playersChoice():
         else:
             rpsUser = input("Invalid choice. Choose rock, paper or scissors: ")
 
-    # Pass the user choice to the computer and from there send both to determine who won
+    # We return the user choice
     return rpsUser
 
 # Function to determine computer´s choice
@@ -78,6 +80,7 @@ def computerChoice():
     else:
         rpsComputer = "scissors"
 
+    # We return the computer choice
     return rpsComputer
     
 # Function to determine who won 
@@ -130,4 +133,5 @@ def determineWinner(userChoice, compuChoice):
 
 # -----------------MAIN-----------------
 
+# Call the play function and start 
 play()
